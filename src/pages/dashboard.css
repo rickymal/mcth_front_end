@@ -1,0 +1,43 @@
+
+
+div.dashboard-container {
+    display: inline;
+    background-color: brown;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+div.dashboard-container div.navbar {
+    display: inline-flex;
+    justify-content: space-between;
+    float : left;
+    align-items: center;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    height: auto;
+    background-color :rgb(124, 7, 241);
+
+}
+
+
+div.template-dashboard {
+    background-color: coral;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+div.mentoring-dashboard {
+    background-color: rgb(157, 157, 204);
+    align-items: center;
+    justify-content: center;
+    
+}
