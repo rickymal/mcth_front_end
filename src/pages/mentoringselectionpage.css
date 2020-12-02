@@ -1,4 +1,42 @@
-div.container {
-    justify-content: center;
-    align-items: center;
+div.mentoring_selection_page-container {
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+div.mentoring_selection_page-container button {
+  width: 200px;
+  height: 20px;
+  align-self: center;
+  margin-top: 10px;
+  background-color: #865633;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+div.mentoring_selection_page-container button:hover {
+  background-color: #ff9347;
+  border-radius: 0;
+}
+
+div.mentoring_selection_page-container ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+div.mentoring_selection_page-container ul li {
+  background-color: #b9815c;
+  margin: 30px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.challengeBox {
+  text-align: center;
 }

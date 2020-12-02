@@ -1,37 +1,34 @@
 div.forms button {
-    width: 300px;
-    height: 60px;
-    align-self: center;
-    margin-top : 10px;
-    background-color: #FBB27D;
-    border: none;
-    border-radius: 5px;
-    transition: .2s;
+  width: 300px;
+  height: 60px;
+  align-self: center;
+  margin-top: 10px;
+  background-color: #fbb27d;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s;
 }
-
 
 div.forms button:hover {
-    
-    background-color: #ff9347;
-    border-radius: 0;
+  background-color: #ff9347;
+  border-radius: 0;
 }
 div.forms form input {
-    
-    border-radius: 10px;
-    min-height: 30px;
-    margin :20px 0 20px 0;
+  border-radius: 10px;
+  min-height: 30px;
+  margin: 20px 0 20px 0;
 }
 
 div.forms {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 div.forms form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
-    background-color: #836e60;
+  background-color: #836e60;
 }

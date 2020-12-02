@@ -1,55 +1,53 @@
 div.challengeBox {
-    margin-top: 10px;
-    margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 div.teamcreationpage-container {
-    display : flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 div.teamcreationpage-container div.navbar-teamcreationpage {
-    flex : 1
+  flex: 1;
 }
 
 div.teamcreationpage-container div.challengeSelection {
-    flex : auto;
+  flex: auto;
 }
 
 div.teamcreationpage-container div.challengeSelection ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 div.teamcreationpage-container div.challengeSelection ul li {
-    margin: 30px;
-    padding: 20px;
-    background-color: rgb(179, 152, 142);
-    text-align: center;
-    box-sizing: border-box;
+  margin: 30px;
+  padding: 20px;
+  background-color: rgb(179, 152, 142);
+  text-align: center;
+  box-sizing: border-box;
 }
 
-
 div.teamcreationpage-container button {
-    width: 300px;
-    height: 60px;
-    align-self: center;
-    margin-top : 10px;
-    background-color: #FBB27D;
-    border: none;
-    border-radius: 5px;
-    transition: .2s;
+  width: 300px;
+  height: 60px;
+  align-self: center;
+  margin-top: 10px;
+  background-color: #fbb27d;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s;
 }
 
 div.teamcreationpage-container button:hover {
-    background-color: #ff9347;
-    border-radius: 0;
+  background-color: #ff9347;
+  border-radius: 0;
 }
 
 div.teamcreationpage-container h2 {
-
 }
