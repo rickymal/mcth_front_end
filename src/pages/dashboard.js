@@ -45,7 +45,11 @@ const Dashboard = (props) => {
             else if(t.data == "Judger"){
                 //project_list
                 api.get("get_listOf_project").then(function({data}){
-                    set_project_list(data)
+
+                    // para testes
+                    const new_data = data
+
+                    set_project_list(new_data)
                     //alert(JSON.stringify(data))
                 })
 
@@ -133,13 +137,13 @@ const Dashboard = (props) => {
 
     }
 
-    function HandleDashboard(){
+    function HDashboard(){
            
         
 
         if (user_kind == "Student"){
             return (
-                <div>
+                <div className = "option-dashboard-pane">
                     <button onClick = {() => push('/teamcreationpage')}>{idTeam == 0 ? "Criação de time" : "Alteração"}</button>
                     <button onClick = {() => push('/mentoringselecionpage')}>Seleção de mentorias</button>
                     {idTeam != 0 ? <button onClick = {() => insertNewMemberForTeam(email)}>Inserir membro</button> : null}
@@ -152,7 +156,7 @@ const Dashboard = (props) => {
         }
         else if(user_kind == "Mentor"){
             return (
-                <div>
+                <div className = "option-dashboard-pane">
                     <textarea value = {data_info} onChange = {(e) => set_data_info(e.target.value)}/>
                     <button onClick = {() => createMentoring(data_info)}>Criar mentoria</button>
                 </div>
@@ -161,7 +165,7 @@ const Dashboard = (props) => {
         else if(user_kind == "Judger"){
             
             return (
-                <div>
+                <div className = "option-dashboard-pane">
                     <ul>
                         {project_list.map(function(dataset){
                                 return (
@@ -187,33 +191,52 @@ const Dashboard = (props) => {
     }
 
 
-    function handleTemplate(){
+    function OptionPane(property){
+        
+        if (property.length){
+            return (                
+                <ul>
+                    {
+                    property.map(e => (
+                        <li key = {e.id}>
+                            <p>Nome do mentor : {e.mentor_name}</p>
+                            <p>data da mentoria : {e.data_meeting}</p>
+                        </li>
+                    ))
+                    }
+                </ul>
+            )
+        } else {
+            return <p><i>Sem mentorias registradas</i></p>
+        }
+    }
+
+
+    function Template(){
         if (user_kind == "Student"){
             return(
 
             <div>
                 <div className = "template-dashboard">
-                    <h2>{idTeam == 0 ? "Sem equipe definida" : "O número da sua equipe é " + idTeam}</h2>   
-                    <h2>Desafio: {challenge_name}</h2>
-                </div>
-                <div className = "mentoring-dashboard">
-                    <h2>Lista de mentorias</h2>
                     <ul>
-                        {mentoring_already_made ? mentoring_already_made.map((e) => (
-                            <li key = {e.id}>
-                                <p>Nome do mentor : {e.mentor_name}</p>
-                                <p>data da mentoria : {e.data_meeting}</p>
-                            </li>
-                            
-                        )) : <p>Sem mentoria</p>} 
+                        <li key = {1}>{idTeam == 0 ? "Sem equipe definida" : "O número da sua equipe é "} <strong>{idTeam}</strong></li>
+                        <li key = {2}>Desafio: <strong>{challenge_name}</strong></li>
                     </ul>
+                    
+                </div>
+                <div className = "template-dashboard">
+                    <h3>Lista de mentorias</h3>
+                    
+                    
+                    {OptionPane(mentoring_already_made)}
+                    
                 </div>
             </div>
             )
         }
         else if(user_kind == "Mentor") {
             return (
-                <div>
+                <div className = "template-dashboard">
                     <p>Nenhum template definido</p>
                 </div>
             )
@@ -237,9 +260,9 @@ const Dashboard = (props) => {
                     <p>Olá, {localStorage.getItem("username")}</p>
                     <p>Sair</p>
                 </div>
-                {handleTemplate()}
+                <Template/>
                 <h2>Opções</h2>
-                {HandleDashboard()}
+                <HDashboard/>
             </div>
         )
     }

@@ -66,7 +66,7 @@ const Teamcreationpage = (props) => {
 
 
 
-    const user = localStorage.getItem("username");
+    
 
     const data = [{
         enterprise : "Empresalandia",
@@ -77,12 +77,11 @@ const Teamcreationpage = (props) => {
         enterprise : "Empresalandia",
         challenge_name : "Desafio Catamarã",
         description : "descrivosa"
-    }]
+    },]
 
 
     return(
-        <div className = "container">
-            <h2>Bem vindo, {user}</h2>
+        <div className = "teamcreationpage-container">
             <div className = "challengeSelection">
                 <ul>
                     {data.map(chl => <li key = {chl.id}> {handleChallenge(chl)} </li>)}
